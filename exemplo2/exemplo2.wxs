@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product 
+			Id="*" 
+			UpgradeCode="12345678-1234-1234-1234-111111111111" 
+			Name="Exemplo2" 
+			Version="0.0.1" 
+			Manufacturer="Miguel Suarez Xavier Penteado" 
+			Language="1033"
+	>
+		<Package InstallerVersion="200" Compressed="yes" Comments="Windows Installer Package"/>
+
+		<Media Id="1" Cabinet="product.cab" EmbedCab="yes"/>
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLDIR" Name="Exemplo2">
+				   <Component Id="ApplicationFiles" Guid="12345678-1234-1234-1234-222222222222">
+					  <File Id="ApplicationFile1" Source="examplo2.exe"/>
+				   </Component>
+				</Directory>
+			</Directory>
+		</Directory>
+
+		<Feature Id="DefaultFeature" Level="1">
+			<ComponentRef Id="ApplicationFiles"/>
+		</Feature>
+		
+	</Product>
+</Wix>

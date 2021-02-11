@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product 
+			Id="*" UpgradeCode="12345678-1234-1234-1234-111111111111" 
+			Name="Exemplo3" 
+			Version="0.0.1" 
+			Manufacturer="Miguel Suez Xve Penteado" 
+			Language="1033"
+	>
+		<Package InstallerVersion="200" Compressed="yes" Comments="Exemplo 3 de instalação de pacotes"/>
+
+		<Media Id="1" Cabinet="product.cab" EmbedCab="yes"/>
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLDIR" Name="Example">
+					<Component Id="ApplicationFiles" Guid="12345678-1234-1234-1234-222222222222">
+						<File Id="ApplicationFile1" Source="exemplo3.exe"/>
+					</Component>
+				</Directory>
+			</Directory>
+
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ProgramMenuSubfolder" Name="Exemplo3">
+
+					<Component Id="ApplicationShortcuts" Guid="12345678-1234-1234-1234-333333333333">
+
+						<Shortcut 
+							Id="ApplicationShortcut1" 
+							Name="Nome do atalho do binario exemplo3" 
+							Description="Este é o exemplo 3" 
+							Target="[INSTALLDIR]exemplo3.exe" 
+							WorkingDirectory="INSTALLDIR"
+						/>
+						
+						<RegistryValue 
+									Root="HKCU" 
+									Key="Software\Progras do Miguel Penteado\Exemplo 3" 
+									Name="installed" 
+									Type="integer" 
+									Value="1" 
+									KeyPath="yes"
+						/>
+						
+					  <RemoveFolder Id="ProgramMenuSubfolder" On="uninstall"/>
+					  
+				   </Component>
+				   
+				</Directory>
+			</Directory>
+		</Directory>
+
+		<Feature Id="DefaultFeature" Level="1">
+			<ComponentRef Id="ApplicationFiles"/>
+			<ComponentRef Id="ApplicationShortcuts"/>
+		</Feature>
+		
+	</Product>
+</Wix>
+
+
+
+
+
+
+
+
+
+
+
