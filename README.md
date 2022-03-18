@@ -2,6 +2,18 @@
 
 Ferramenta de geração de instaladores formato MSI
 
+Aprender objetivos a seguir:
+
+Instalar arquivo
+Instalar variáveis de ambiente
+Instalar Serviços
+Instalar assemblies
+Instalar Drivers
+Instalar Impressoras
+Instalar Regras de Firewall
+Executar scripts pré-instalação
+Executar scripts pós-instalação
+
 ## WixEdit
 [wixedit.github.io](https://wixedit.github.io)
 
