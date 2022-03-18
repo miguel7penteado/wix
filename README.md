@@ -7,7 +7,8 @@ Aprender objetivos a seguir:
 - Instalar arquivo
 - Instalar variáveis de ambiente
 - Instalar Serviços
-- Instalar assemblies
+- Instalar assemblies no windows
+- Instalar assemblies do .net framework
 - Instalar Drivers
 - Instalar Impressoras
 - Instalar Regras de Firewall
